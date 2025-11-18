@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luciana Saucedo - Psicología Organizacional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c5282;
+            --secondary: #4299e1;
+            --accent: #48bb78;
+            --light: #ebf8ff;
+            --dark: #2d3748;
+            --text: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f7fafc;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 60px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .skills-list, .competencies-list {
+            list-style-type: none;
+        }
+        
+        .skills-list li, .competencies-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skills-list li:before, .competencies-list li:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .language-level {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .education-item, .activity-item {
+            margin-bottom: 25px;
+        }
+        
+        .date {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .activity-details {
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+        
+        .activity-details li {
+            margin-bottom: 8px;
+        }
+        
+        .achievements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .achievement {
+            background-color: var(--light);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-img">
+            <i class="fas fa-user"></i>
+        </div>
+        <h1>LUCIANA SAUCEDO</h1>
+        <div class="subtitle">Estudiante de Psicología Organizacional</div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>***</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>lucianasaucedo2112@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>***</span>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="section">
+                    <h2>Acerca de mí</h2>
+                    <p>Soy estudiante de Psicología Organizacional en la Universidad Privada Boliviana, actualmente en quinto semestre y becaria del programa "100 Mejores". Me apasiona el área clínica y he participado en diversas experiencias prácticas con niños, adolescentes y adultos mayores. Me destaco por mi empatía, responsabilidad y vocación por el acompañamiento emocional y el desarrollo humano.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>Habilidades</h2>
+                    <ul class="skills-list">
+                        <li>Aplicación básica de test psicológicos (Bender, RIAM, TDAH)</li>
+                        <li>Facilitación de talleres psicoeducativos</li>
+                        <li>Elaboración de registros clínicos e informes</li>
+                        <li>Manejo de herramientas digitales y ofimáticas (Word, PowerPoint, Google Workspace)</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>Competencias</h2>
+                    <ul class="competencies-list">
+                        <li>Comunicación empática y escucha activa</li>
+                        <li>Trabajo en equipo y sensibilidad intercultural</li>
+                        <li>Pensamiento analítico y capacidad de observación</li>
+                        <li>Adaptabilidad en contextos clínicos, escolares y comunitarios</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>Idiomas</h2>
+                    <div class="language-item">
+                        <span>Español</span>
+                        <span class="language-level">Nativo</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Inglés</span>
+                        <span class="language-level">Avanzado</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="section">
+                    <h2>Educación</h2>
+                    <div class="education-item">
+                        <div class="date">2023 – 2026</div>
+                        <h3>Licenciatura en Psicología Organizacional</h3>
+                        <p>Universidad Privada Boliviana (UPB)</p>
+                        <p>Promedio: 84/100</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="date">2018 – 2022</div>
+                        <h3>Bachillerato en humanidades</h3>
+                        <p>Colegio Franco Boliviano</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Logros Académicos</h2>
+                    <div class="achievements">
+                        <div class="achievement">Ganadora Beca 100 Mejores 40%</div>
+                        <div class="achievement">Ganadora Olimpiadas Biología</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Actividades Académicas</h2>
+                    
+                    <div class="activity-item">
+                        <h3>Feria de Salud – Evaluación para TDAH</h3>
+                        <ul class="activity-details">
+                            <li>Participé como evaluadora en una feria de salud, aplicando pruebas para detectar síntomas de TDAH en universitarios.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <h3>Prácticas Psicoeducativas – Colegio Gastón Guillaux</h3>
+                        <ul class="activity-details">
+                            <li>Facilité talleres sobre relaciones afectivas e inteligencia emocional a adolescentes.</li>
+                            <li>Diseñé dinámicas participativas para fomentar el bienestar emocional.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <h3>Prácticas Clínicas – Centro Terapéutico Municipal</h3>
+                        <ul class="activity-details">
+                            <li>Apoyé en sesiones con niños con trastornos del neurodesarrollo.</li>
+                            <li>Realicé observaciones conductuales y reforcé habilidades en intervención clínica infantil.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <h3>Evaluación Psicológica – Adultos Mayores (RIAM)</h3>
+                        <ul class="activity-details">
+                            <li>Trabajo en entrevistas y aplicación de instrumentos para la evaluación cognitiva y emocional de personas mayores.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <h3>Trabajo Becario – Universidad Privada Boliviana</h3>
+                        <ul class="activity-details">
+                            <li>Representación de la carrera en ferias educativas y charlas informativas para futuros estudiantes.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <h3>Evaluación Infantil – Kinder Cáritas</h3>
+                        <ul class="activity-details">
+                            <li>Aplicación de Test de Bender en niños preescolares para valorar habilidades visamotoras.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <h3>Investigación en Psicología Cultural – Comunidad Ayerca</h3>
+                        <ul class="activity-details">
+                            <li>Participación en investigación cualitativa sobre dinámicas psicosociales en contextos indígenas.</li>
+                            <li>Trabajo de campo e interpretación intercultural.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="https://www.linkedin.com/in/luciana-saucedo-347517367" class="linkedin-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    Conecta conmigo en LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>CV Digital - Luciana Saucedo</p>
+    </footer>
+</body>
+</html>
